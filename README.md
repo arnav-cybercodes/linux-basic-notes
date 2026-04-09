@@ -10,7 +10,8 @@ Learning Linux for CyberSecurity from basics.
 
 ###  Basic Commands Practiced
 
-| Command | Description 
+| Command | Description |
+|--------|-------------|
 | `pwd` |  Shows current directory path |
 | `ls` | Lists files and directories |
 | `cd` | Change directory |
