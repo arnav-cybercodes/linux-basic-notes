@@ -1,33 +1,108 @@
-# linux-basic-notes
-Learning Linux for CyberSecurity from basics.
+# 🐧 Linux Basics Journey (Beginner → Intermediate)
 
-## What I Learned 🧑‍🎓 [DAY🥇]
-- Linux is mainly based on **CLI (Command Line Interface)**  
-- Windows and macOS are mainly based on **GUI (Graphical User Interface)**  
-
-- CLI allows users to interact using commands  
-- GUI allows users to interact using visual elements like icons, windows, and buttons  
-
-###  Basic Commands Practiced
-
-| Command | Description |
-|--------|-------------|
-| `pwd` |  Shows current directory path |
-| `ls` | Lists files and directories |
-| `cd` | Change directory |
-| `cd ..` | Move one directory up |
-| `whoami` | Shows current logged-in user |
-| `clear` | Clears the terminal screen |
-
-###  Exploration
-
-- Explored system directories using `cd` and `ls`
-- Navigated through root directories like `/bin`
-- Learned that `/bin` contains important system command binaries
+## 📌 Overview
+This repository documents my **Linux learning journey**, starting from absolute basics to essential command-line skills, permissions, and file management.
 
 ---
 
-###  Experiment
+# 🚀 Getting Started with Terminal
 
-- Tried copying a command using:
-  cp /bin/ls my_ls_copy
+## 🖥️ Basic Terminal Usage
+- Open Terminal  
+- Close Terminal  
+- Adjust font size  
+- Clear screen  
+- Pause/stop processes  
+- End processes  
+
+---
+
+## ⌨️ Important Shortcut Keys
+
+- `Ctrl + Alt + T` → Open terminal  
+- `Ctrl + C` → Stop running process  
+- `Ctrl + Z` → Pause process  
+- `Ctrl + L` → Clear screen  
+- `Ctrl + A` → Move cursor to start  
+- `Ctrl + E` → Move cursor to end  
+
+---
+
+# 📂 Basic Linux Commands
+
+## 📍 Current Directory
+```bash
+pwd
+📄 List Files
+Bash
+ls
+📁 Change Directory
+Bash
+cd <directory>
+📄 Create File
+Bash
+touch file.txt
+📝 Write Text
+Bash
+echo "Hello" > file.txt
+📖 Read File
+Bash
+cat file.txt
+❌ Delete File
+Bash
+rm file.txt
+📁 Create Directory
+Bash
+mkdir folder
+🔄 Move / Rename File
+Bash
+mv password.txt test.txt
+🧠 Text Editors
+✏️ Vim
+Advanced terminal editor
+Works with modes (Insert, Command)
+✏️ Nano
+Beginner-friendly
+Easy and simple to use
+🔐 File Permissions
+📌 Basics
+Read (r)
+Write (w)
+Execute (x)
+🧩 chmod (Symbolic Method)
+Bash
+chmod u+x file.txt
+🔢 chmod (Octal Method)
+Bash
+chmod 755 file.txt
+👑 Root Access
+🔓 Open Root Shell
+Bash
+sudo bash
+👉 Gives full administrative control
+👤 Ownership Commands
+Change Owner
+Bash
+chown user file.txt
+Change Group
+Bash
+chgrp group file.txt
+🔍 Searching in Files
+grep command
+Bash
+grep "dynamics" /etc/protocols
+🔗 Pipe Operator (|)
+👉 Used to combine commands
+Example:
+Bash
+cat file.txt | grep "hello"
+🔎 Finding Files
+📍 locate command
+Bash
+locate --all "password"
+Combine with grep
+Bash
+locate "password" | grep "/etc/passwd"
+Count Results
+Bash
+locate --all -c filename
