@@ -2,21 +2,21 @@
 
 ## 📌 Overview
 This repository documents my hands-on journey learning Linux from scratch.  
-It covers terminal basics, file management, permissions, searching, and essential command-line utilities.
+It covers terminal basics, file management, permissions, searching, and essential commands.
 
 ---
 
 # 🚀 Terminal Basics
 
 ## 🖥️ What I Learned
-- How to open and close terminal  
-- Adjust font size  
-- Clear terminal screen  
-- Pause and terminate processes  
+- Opening and closing terminal  
+- Adjusting font size  
+- Clearing terminal  
+- Pausing and stopping processes  
 
 ---
 
-## ⌨️ Important Shortcuts
+## ⌨️ Shortcut Keys
 
 | Shortcut | Function |
 |----------|----------|
@@ -24,7 +24,7 @@ It covers terminal basics, file management, permissions, searching, and essentia
 | Ctrl + C | Stop running process |
 | Ctrl + Z | Pause process |
 | Ctrl + L | Clear screen |
-| Ctrl + A | Move cursor to beginning |
+| Ctrl + A | Move cursor to start |
 | Ctrl + E | Move cursor to end |
 
 ---
@@ -33,42 +33,39 @@ It covers terminal basics, file management, permissions, searching, and essentia
 
 | Command | Function | Example |
 |--------|---------|--------|
-| pwd | Shows current working directory | pwd |
-| ls | Lists files and directories | ls |
-| cd | Changes directory | cd Documents |
-| touch | Creates empty file | touch file.txt |
-| echo | Writes text into file | echo "Hello" > file.txt |
-| cat | Displays file content | cat file.txt |
-| rm | Deletes file | rm file.txt |
-| mkdir | Creates directory | mkdir folder |
-| mv | Moves or renames file | mv password.txt test.txt |
+| pwd | Show current directory | pwd |
+| ls | List files | ls |
+| cd | Change directory | cd Documents |
+| touch | Create file | touch file.txt |
+| echo | Write text to file | echo "Hello" > file.txt |
+| cat | Read file | cat file.txt |
+| rm | Delete file | rm file.txt |
+| mkdir | Create directory | mkdir folder |
+| mv | Move / Rename file | mv password.txt test.txt |
 
 ---
 
 # 🧠 Text Editors
 
-## ✏️ Vim
-- Advanced terminal-based editor  
-- Uses modes (Insert, Command)  
-- Powerful but requires practice  
-
-## ✏️ Nano
-- Beginner-friendly  
-- Simple and easy to use  
+| Editor | Description |
+|--------|------------|
+| Vim | Advanced editor with modes (Insert, Command) |
+| Nano | Simple and beginner-friendly |
 
 ---
 
-# 🔐 Directory & File Permissions
+# 🔐 File & Directory Permissions
 
 ## 📌 Definition
-File permissions control who can:
-- Read (r)
-- Write (w)
-- Execute (x)
+Permissions decide who can read, write, or execute a file.
 
-Permissions are divided into:
-- User (Owner)
-- Group
+- r → Read  
+- w → Write  
+- x → Execute  
+
+Users:
+- User (Owner)  
+- Group  
 - Others  
 
 ---
@@ -76,87 +73,98 @@ Permissions are divided into:
 ## 🔢 Permission Format
 
 Example:
-```bash
 -rwxr-xr--
+
 Breakdown:
-rwx → Owner permissions
-r-x → Group permissions
-r-- → Others permissions
-🧩 chmod (Change Permissions)
-🔹 Symbolic Method
-Command
-Function
-Example
-chmod u+x file
-Add execute permission to user
-chmod u+x file.txt
-chmod g-w file
-Remove write from group
-chmod g-w file.txt
-🔹 Octal Method
-Value
-Permission
-7
-rwx
-6
-rw-
-5
-r-x
-4
-r--
+- rwx → Owner  
+- r-x → Group  
+- r-- → Others  
+
+---
+
+# 🧩 chmod (Change Permissions)
+
+## Symbolic Method
+
+| Command | Function | Example |
+|--------|---------|--------|
+| chmod u+x file | Add execute to user | chmod u+x file.txt |
+| chmod g-w file | Remove write from group | chmod g-w file.txt |
+
+---
+
+## Octal Method
+
+| Value | Permission |
+|------|-----------|
+| 7 | rwx |
+| 6 | rw- |
+| 5 | r-x |
+| 4 | r-- |
+
 Example:
-Bash
 chmod 755 file.txt
-👉 Owner: rwx
-👉 Group: r-x
-👉 Others: r-x
-👑 Root Access
-Command
-Function
-Example
-sudo bash
-Opens root shell
-sudo bash
-👉 Gives full administrative privileges
-👤 Ownership Management
-Command
-Function
-Example
-chown
-Change file owner
-chown user file.txt
-chgrp
-Change group ownership
-chgrp group file.txt
-🔍 Searching in Files
-📌 grep (Global Regular Expression Print)
-Definition
-Searches for specific text inside files
-Command
-Function
-Example
-grep "text" file
-Finds text in file
-grep "dynamics" /etc/protocols
-🔗 Pipe Operator (|)
-📌 Definition
-Used to pass output of one command as input to another
-Example
-Bash
+
+Meaning:
+- Owner → rwx  
+- Group → r-x  
+- Others → r-x  
+
+---
+
+# 👑 Root Access
+
+| Command | Function |
+|--------|---------|
+| sudo bash | Open root shell |
+
+Gives full administrative control.
+
+---
+
+# 👤 Ownership Commands
+
+| Command | Function | Example |
+|--------|---------|--------|
+| chown | Change owner | chown user file.txt |
+| chgrp | Change group | chgrp group file.txt |
+
+---
+
+# 🔍 Searching in Files
+
+| Command | Function | Example |
+|--------|---------|--------|
+| grep "text" file | Search text in file | grep "dynamics" /etc/protocols |
+
+---
+
+# 🔗 Pipe Operator
+
+## Definition
+Pass output of one command to another.
+
+Example:
 cat file.txt | grep "hello"
-👉 Takes output of cat and filters using grep
-🔎 Finding Files
-📌 locate Command
-Definition
-Finds files quickly using database
-Command
-Function
-Example
-locate --all "password"
-Find all matching files
-locate --all "password"
-locate "password" | grep "/etc/passwd"
-Filter results
-locate "password" | grep "/etc/passwd"
-locate --all -c filename
-Count results
+
+---
+
+# 🔎 Finding Files
+
+| Command | Function | Example |
+|--------|---------|--------|
+| locate --all "password" | Find files | locate --all "password" |
+| locate "password" \| grep "/etc/passwd" | Filter results | locate "password" \| grep "/etc/passwd" |
+| locate --all -c filename | Count results | locate --all -c filename |
+
+---
+
+# 🧭 Key Learnings
+
+- Navigating filesystem  
+- Managing files and directories  
+- Understanding permissions  
+- Using search tools  
+- Combining commands  
+
+---
